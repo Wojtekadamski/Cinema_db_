@@ -19,6 +19,8 @@ from movie_app import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('add_person/', views.person_view),
-    path('add_movie/', views.movie_view)
+    path('add_movie/', views.movie_view),
+path('add_genre/', views.genre_view),
+path('movie_detail/<int:id>/', views.movie_detail),
 
 ]
