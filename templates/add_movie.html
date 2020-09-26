@@ -1,0 +1,17 @@
+<form method="post">
+    {% csrf_token %}
+    tytuł: <input type="text" name="title">
+    <select name="director">
+        {% for person in persons %}
+            <option value="{{ person.id }}">
+                {{ person.last_name }}
+            </option>
+        {% endfor %}
+    </select>
+<input type="submit">
+</form>
+<ul>
+{% for movie in movies %}
+    <li>{{ movie.title }} {{ movie.director.last_name }}</li>
+{% endfor %}
+</ul>

@@ -1,0 +1,11 @@
+<form method="post" >
+    {% csrf_token %}
+    imie: <input type="text" name="first_name"><br>
+    nazwisko: <input type="text" name="last_name"><br>
+    <input type="submit">
+</form>
+<ul>
+{% for person in persons %}
+    <li>{{ person.first_name }} {{ person.last_name }}</li>
+{% endfor %}
+</ul>
