@@ -15,6 +15,13 @@ scenarzysta:<select name="screen_play">
             </option>
         {% endfor %}
     </select><br>
+producent:<select name="producer_id">
+        {% for producer in producers %}
+            <option value="{{ producer.id }}">
+                {{ producer.last_name }}
+            </option>
+        {% endfor %}
+    </select><br>
 grali: <select multiple name="starring"> {% for person in persons %}
             <option value="{{ person.id }}">
                 {{ person.last_name }}

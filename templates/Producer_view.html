@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="POST">
+    {% csrf_token %}
+    nazwa:<input name="name" type="text" value="{{ producer.name }}">
+    adres:<input name="address" type="text" value="{{ producer.address }}">
+    <input type="submit">
+</form>
+<ul>
+{% for producer in producers %}
+<li><a href="/producer/{{ producer.id }}">{{ producer.name }} - {{ producer.address }}</li></a>
+{% endfor %}</ul>
+</body>
+</html>

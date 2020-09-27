@@ -1,14 +1,14 @@
 <form method="post">
     {% csrf_token %}
     tytuł: <input type="text" name="title">
-    reżyser:<select name="director">
+    reżyser:<select name="director_id">
         {% for person in persons %}
             <option value="{{ person.id }}">
                 {{ person.last_name }}
             </option>
         {% endfor %}
     </select><br>
-scenarzysta:<select name="screen_play">
+scenarzysta:<select name="screen_play_id">
         {% for person in persons %}
             <option value="{{ person.id }}">
                 {{ person.last_name }}

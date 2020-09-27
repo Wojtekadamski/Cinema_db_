@@ -21,6 +21,8 @@ urlpatterns = [
     path('add_person/', views.person_view),
     path('add_movie/', views.movie_view),
 path('add_genre/', views.genre_view),
-path('movie_detail/<int:id>/', views.movie_detail),
+path('movie_detail/<int:id>/', views.MovieDataView.as_view()),
+path('publisher/', views.AddPublisher.as_view()),
+path('publisher/<int:id>/', views.AddPublisher.as_view()),
 
 ]

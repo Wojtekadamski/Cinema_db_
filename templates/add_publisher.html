@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form method="POST">
+    {% csrf_token %}
+     nazwa:<input name="name" type="text" value="{{ publisher.name }}">
+    adres:<input name="address" type="text" value="{{ publisher.address }}">
+    <input type="submit">
+</form>
+<ul>
+{% for publisher in publishers %}
+    <li><a href="/publisher/{{ publisher.id }}">{{ publisher.name }} - {{ publisher.address }}</a>&nbsp<button type="button" value="X" name="delete"> X</button></li>
+{% endfor %}</ul>
+<br><br>
+<form>
+
+    <p><input type="text" name="name"></p>
+    <p><input type="submit"></p>
+
+</form>
+</body>
+</html>
